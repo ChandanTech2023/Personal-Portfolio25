@@ -19,7 +19,7 @@
   --animate-fade-in-delay-2: fade-in 0.6s ease-out 0.4s forward;
   --animate-fade-in-delay-3: fade-in 0.6s ease-out 0.6s forward;
   --animate-fade-in-delay-4: fade-in 0.6s ease-out 0.8s forward;
-  --animate-meteor : meteor 5s linear infinite
+  --animate-meteor : meteor 3s linear infinite
 
 /* Use keyframe to show how should animation act  */
 @keyframes float {
@@ -35,7 +35,7 @@
     opacity: 1;
   }
   50%{
-    opacity: 0.7;
+    opacity: 0.8;
   }
   
 }
@@ -58,7 +58,7 @@
     opacity: 1;
   }
   100%{
-    transform: rotate(215deg) translateX(-500px);
+    transform: rotate(105deg) translateX(-500px);
     opacity: 0;
   }
 } 
@@ -147,7 +147,7 @@
 }
 @utility meteor{
   @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full; 
-  box-shadow:0 0 10px 5px rgba(255,255,255,0.2);
+  box-shadow:0 0 10px 3px rgba(255,255,255,0.2);
 
 }
 
