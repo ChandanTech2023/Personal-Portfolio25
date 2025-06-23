@@ -69,7 +69,7 @@ const StarBackground = () => {
             {meteors.map((meteor) => (
                 <div key={meteor.id} className="meteor animate-meteor"
                      style={{
-                        width: meteor.size*40 + "px",
+                        width: meteor.size + "px",
                         height: meteor.size + "px",
                         left: meteor.x + "%",
                         top: meteor.y + "%",
