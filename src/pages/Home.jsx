@@ -1,13 +1,13 @@
 import React from 'react';
+import ToggleTheme from '../components/ToggleTheme';
 
 const Home = () => {
   return (
-    <div>
-      <header>
-        <h1>Welcome to My React App!</h1>
-      </header>
-      {/* Theme Toggle */}
+    <div className='min-h-screen bg-background text-foreground overflow-x-hidden'>
       
+      {/* Theme Toggle */}
+      <ToggleTheme/>
+
       {/* Background Effect  */}
 
       {/* Navbar  */}
