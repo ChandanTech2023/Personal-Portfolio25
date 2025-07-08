@@ -55,14 +55,21 @@ const StarBackground = () => {
     return (
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
             {stars.map((star) => (
-                <div key={star.id} className="star animate-pulse-subtle" style={{
-                    width: star.size + "px",
-                    height: star.size + "px",
-                    left: star.x + "%",
-                    top: star.y + "%",
-                    opacity: star.opacity,
-                    animationDuration: star.animationDuration + "s",
-                }}
+                <div
+                    key={star.id}
+                    className="star"
+                    style={{
+                        width: star.size + "px",
+                        height: star.size + "px",
+                        left: star.x + "%",
+                        top: star.y + "%",
+                        opacity: star.opacity,
+                        position: 'absolute',
+                        background: 'rgba(255,255,255,0.8)',
+                        borderRadius: '50%',
+                        boxShadow: '0 0 8px 2px #fff',
+                        animation: `star-twinkle ${star.animationDuration}s ease-in-out infinite, star-move ${star.animationDuration * 2}s ease-in-out infinite`,
+                    }}
                 />
             ))}
 
@@ -76,9 +83,23 @@ const StarBackground = () => {
                         animationDelay: meteor.delay,
                         animationDuration: meteor.animationDuration + "s",
                     }}
-                    
                 />
-                ))} 
+            ))}
+
+            {/* Animation keyframes for stars */}
+            <style>{`
+                @keyframes star-twinkle {
+                    0%, 100% { opacity: 0.7; }
+                    20% { opacity: 1; }
+                    50% { opacity: 0.4; }
+                    80% { opacity: 1; }
+                }
+                @keyframes star-move {
+                    0% { transform: translateY(0px) scale(1); }
+                    50% { transform: translateY(-12px) scale(1.1); }
+                    100% { transform: translateY(0px) scale(1); }
+                }
+            `}</style>
         </div>
 
     );
